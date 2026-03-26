@@ -30,7 +30,41 @@ tw-link:focus, tw-link:hover, tw-link:active, tw-link.visited:hover {
   text-decoration: none;
 }
 tw-passage {
-  padding-bottom: 200px;}</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.onload = function () {
+  padding-bottom: 200px;}
+
+img {  /* this selects all image (img) elements */
+  width: 100%;
+}
+
+.story-image-smaller {  /* this selects all elements with the story-image-smaller class not just images */
+  width: 50%;
+}
+
+.story-room {
+  display: grid;  /* sets the display to grid on the surrounding div */
+  grid-template-columns: 50% 50%;  /* sets each column to 50% */
+}
+.story-text {
+  grid-column: 1;  /* sets which column the text appears in */
+  grid-row: 1;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.story-image {
+  grid-column: 2;  /* sets which column the image appears in */
+  grid-row: 1;
+}
+.story-image img {
+max-width: 100%;
+height: auto;
+display: block;
+}
+
+tw-story[tags~="example-background"]
+  background-image: url(./images/floor.jpg);  
+  background-size: cover;
+  background-repeat: no-repeat;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.onload = function () {
     if (!document.getElementById("bg-music")) {
         var audio = document.createElement("audio");
         audio.id = "bg-music";
@@ -47,11 +81,11 @@ tw-passage {
         document.body.appendChild(audio);
     }
 };
-// Change source.src to file name</script><tw-passagedata pid="1" name="Landing Page" tags="" position="900,300" size="100,100">Please, [[come inside|Come Inside]]</tw-passagedata><tw-passagedata pid="2" name="Come Inside" tags="" position="900,425" size="100,100">The entry hall is large, the chandelier above is grandiose, and you feel small. (click-replace: &quot;small&quot;) [tiny] (click-replace: &quot;tiny&quot;) [insignificant] (click-replace: &quot;insignificant&quot;) [like nothing] (click-replace: &quot;like nothing&quot;) [impermanent] (click-append: &quot;impermanent&quot;) [, like you will [[die|Die]] here]</tw-passagedata><tw-passagedata pid="3" name="Die" tags="" position="900,550" size="100,100">(t8n-delay: 5s) + (t8n: &quot;fade-down&quot;) [You hear a stumble in the hallway ahead of you.] 
+// Change source.src to file name</script><tw-tag name="example-background" color="orange"></tw-tag><tw-passagedata pid="1" name="Landing Page" tags="" position="900,300" size="100,100">Please, [[come inside|Come Inside]]</tw-passagedata><tw-passagedata pid="2" name="Come Inside" tags="example-background" position="900,425" size="100,100">The entry hall is large, the chandelier above is grandiose, and you feel small. (click-replace: &quot;small&quot;) [tiny] (click-replace: &quot;tiny&quot;) [insignificant] (click-replace: &quot;insignificant&quot;) [like nothing] (click-replace: &quot;like nothing&quot;) [impermanent] (click-append: &quot;impermanent&quot;) [, like you will [[die|Die]] here]</tw-passagedata><tw-passagedata pid="3" name="Die" tags="" position="900,550" size="100,100">(t8n-delay: 5s) + (t8n: &quot;fade-down&quot;) [You hear a stumble in the hallway ahead of you.] 
 (t8n-delay: 8s) + (t8n: &quot;dissolve&quot;) [There&#39;s another one.]
-(t8n-delay: 10s) + (t8n: &quot;dissolve&quot;) [Well what are you waiting for? [[Investigate]]]</tw-passagedata><tw-passagedata pid="4" name="Investigate" tags="" position="900,675" size="100,100">[[&lt;img class=&quot;story-image&quot; src=&quot;.images/Simon.jpg&quot; alt=&quot;Simon&quot; /&gt; |Simon&#39;s room]]</tw-passagedata><tw-passagedata pid="5" name="Simon&#39;s room" tags="" position="900,800" size="100,100">Hiya
+(t8n-delay: 10s) + (t8n: &quot;dissolve&quot;) [Well what are you waiting for? [[Investigate]]]</tw-passagedata><tw-passagedata pid="4" name="Investigate" tags="" position="900,675" size="100,100">[[&lt;img class=&quot;story-image-smaller&quot; src=&quot;.images/Simon.jpg&quot; alt=&quot;Simon&quot; /&gt; |Simon&#39;s room]]</tw-passagedata><tw-passagedata pid="5" name="Simon&#39;s room" tags="" position="900,800" size="100,100">Hiya
 Add audio here. From the resources page of the class github.
-[[Go back the other way]]</tw-passagedata><tw-passagedata pid="6" name="Go back the other way" tags="" position="900,925" size="100,100"></tw-passagedata></tw-storydata>
+[[Go back the other way]]</tw-passagedata><tw-passagedata pid="6" name="Go back the other way" tags="" position="900,925" size="100,100">&lt;div class=&quot;story-room&quot;&gt;&lt;div class=&quot;story-text&quot;&gt;It&#39;s a dead end&lt;/div&gt;&lt;div class=&quot;story-image&quot;&gt;&lt;img src=&quot;./images/Simon.jpg&quot; alt=&quot;Simon&quot; /&gt;&lt;/div&gt;&lt;/div&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
